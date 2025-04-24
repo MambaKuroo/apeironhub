@@ -75,5 +75,22 @@ function checkCode() {
     }
 }
 </script>
+
+<div id="example-one" contenteditable="true">
+
+</div>
+<p id="save">Save Text</p>
+
+<script>
+document.getElementById("save").addEventListener('click', function(el) {
+    localStorage.setItem("text", document.getElementById('example-one').innerHTML);
+});
+
+window.onload = function() {
+    var text = localStorage.getItem("text");
+    document.getElementById('example-one').innerHTML = text;
+}
+</script>
+    
 </body>
 </html>
